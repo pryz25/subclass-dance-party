@@ -1,7 +1,7 @@
 var makeInkyDancer = function(top, left, timeBetweenSteps) {
   // var blinkyDancer = makeDancer(top, left, timeBetweenSteps);
   makeDancer.call(this, top, left, timeBetweenSteps);
-  this.$node = this.$node.addClass( "inky" );
+  this.$node = this.$node.addClass('inky');
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
   // so we must keep a copy of the old version of this 
 };
@@ -18,13 +18,11 @@ makeInkyDancer.prototype.step = function() {
   // See http://api.jquery.com/category/effects/ for this and
   // other effects you can use on a jQuery-wrapped html tag.
   this.$node.animate({
-    width: "60px",
+    width: '60px',
     opacity: 0
   });
   this.$node.animate({
-    width: "30px",
+    width: '30px',
     opacity: 1
   });
-  
 };
-  // this.$node.fadeOut();
