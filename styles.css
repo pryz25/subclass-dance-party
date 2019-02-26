@@ -3,7 +3,8 @@ body, html{
 }
 body{
   margin: 0px;
-  background-color:#444;
+  background-image: url(https://grid-paint.appspot.com/images/png/5099824051388416.png);
+  background-size: contain;
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
@@ -20,8 +21,27 @@ body, a:link, a:visited, a:active{
 .title{
   background-color: #777;
 }
+
 .dancer{
-  border:10px solid red;
-  border-radius:10px;
+}
+
+.blinky{
+  content:url(https://static.giantbomb.com/uploads/scale_small/8/87790/2469740-blinky.png);
+  height: 30px;
+  width: 30px;
+  position:absolute;
+}
+
+.inky{
+  content:url(https://static.giantbomb.com/uploads/original/8/87790/2469741-inky.png);
+  height: 30px;
+  width: 30px;
+  position:absolute;
+}
+
+.pinky{
+  content:url(https://static.giantbomb.com/uploads/scale_small/8/87790/2469744-pinky.png);
+  height: 30px;
+  width: 30px;
   position:absolute;
 }
