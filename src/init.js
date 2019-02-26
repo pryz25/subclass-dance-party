@@ -28,6 +28,35 @@ $(document).ready(function() {
       Math.random() * 1000
     );
     $('body').append(dancer.$node);
+    // window.dancers.push(dancer);
+  });
+  
+  var counter = 0;
+  $('.lineUp').on('click', function(event) {
+    
+    //go through all dancers 
+      //for each 
+        //set left to 0;
+    
+    var arrayOfDancers = document.body.getElementsByClassName('dancer');
+    
+    if (counter % 2 === 0) {
+      Array.prototype.forEach.call(arrayOfDancers, function(dancer) {
+        dancer.style.left = 0;
+        dancer.style.right = '';
+      });
+      counter++; 
+    } else {
+      Array.prototype.forEach.call(arrayOfDancers, function(dancer) {
+        dancer.style.right = 0;
+        dancer.style.left = '';
+      });
+      counter++;
+    }
+  });
+  
+  $('.dancer').mouseover(function() {
+    $(this).attr({"content":"url(https://orig00.deviantart.net/fb44/f/2013/021/3/a/1ghostghosted3_by_camdencc-d5saelk.gif)" });
   });
 });
 
