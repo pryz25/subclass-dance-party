@@ -1,6 +1,9 @@
 // Creates and returns a new dancer object that can step
 var makeDancer = function(top, left, timeBetweenSteps) {
-  this.neighbor = {};// closest object object {object: distance}
+  this.neighbor = {
+    node: null,
+    distance: null
+  }; // closest object object {object: distance}
   // use jQuery to create an HTML <span> tag
   this.$node = $('<span class="dancer"></span>');
   this.top = top;
@@ -47,9 +50,43 @@ makeDancer.prototype.lineUp = function() {
   this.left = 0;
 };
 
-// interact method
-// each dancer calculates distances to each other
-  // create storage object
-  // for each dancer in dancer storage
-    // calculate distance
-// do something based on distance
+var findDistance = function(dancer, partner) {
+  var distance = 0;
+
+  var x1 = dancer.left;
+  var x2 = partner.left;
+  var y1 = dancer.top;
+  var y2 = partner.top;
+
+  var yDist = y1 - y2;
+  var xDist = x1 - x2;
+
+  distance = Math.sqrt((xDist * xDist) + (yDist * yDist));
+  return distance;
+};
+
+makeDancer.prototype.interact = function() { // interact method
+  for (var i = 0; i < window.dancers.length; i++) { // each dancer calculates distances to each other
+    for (var j = 0; j < window.dancers.length; j++) {
+      if (i === j) { //skip
+        continue;
+      }
+      var distance = findDistance(window.dancers[i], window.dancers[j]);// for each dancer in dancer storage
+      if (window.dancers[i].neighbor.distance && distance < window.dancers[i].neighbor.distance) { // calculate distance
+        window.dancers[i].neighbor.distance = distance;// if distance is less than stored
+        window.dancers[i].neighbor.node = window.dancers[j]; // replace node k-v pair
+      } else {
+        window.dancers[i].neighbor.distance = distance; // if still null
+        window.dancers[i].neighbor.node = window.dancers[j]; // insert node k-v pair
+      }
+    }
+  }
+  // do something based on distance
+  // if neighbor distance is less than 100
+  for (var k = 0; k < window.dancers.length; k++) {
+    if (window.dancers[k].neighbor.distance < 100) {
+      $('.dancer').css({top: window.dancers[k].neighbor.node.top, left: (window.dancers[k].neighbor.node.left)});
+      //window.dancers[k].left = window.dancers[k].neighbor.node.left + 30;
+    }
+  }
+}; 
