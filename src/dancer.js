@@ -13,6 +13,13 @@ var makeDancer = function(top, left, timeBetweenSteps) {
   
   // this one sets the position to some random default point within the body
   this.setPosition(this.top, this.left);
+
+  $('.dancer').mouseover(function() {
+    $(this).css("background-image", "url('https://orig00.deviantart.net/fb44/f/2013/021/3/a/1ghostghosted3_by_camdencc-d5saelk.gif')");
+  });
+  $('.dancer').mouseout(function() {
+    $(this).css("background-image", '');
+  });
 };
 
 makeDancer.prototype.step = function() {

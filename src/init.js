@@ -21,7 +21,6 @@ $(document).ready(function() {
     var dancerMakerFunction = window[dancerMakerFunctionName];
 
     // make a dancer with a random position
-
     var dancer = new dancerMakerFunction(
       $("body").height() * Math.random(),
       $("body").width() * Math.random(),
@@ -53,10 +52,6 @@ $(document).ready(function() {
       });
       counter++;
     }
-  });
-  
-  $('.dancer').mouseover(function() {
-    $(this).attr({"content":"url(https://orig00.deviantart.net/fb44/f/2013/021/3/a/1ghostghosted3_by_camdencc-d5saelk.gif)" });
   });
 });
 

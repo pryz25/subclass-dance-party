@@ -23,25 +23,27 @@ body, a:link, a:visited, a:active{
 }
 
 .dancer{
+  position: absolute;
 }
-
+/* change to hash & content to background */
 .blinky{
-  content: url(https://static.giantbomb.com/uploads/scale_small/8/87790/2469740-blinky.png);
   height: 30px;
   width: 30px;
-  position:absolute;
+  background-image: url('https://static.giantbomb.com/uploads/scale_small/8/87790/2469740-blinky.png');
+  background-size: 30px 30px;
 }
-
+/* change to hash & content to background */
 .inky{
-  content: url(https://static.giantbomb.com/uploads/original/8/87790/2469741-inky.png);
+  background-image: url('https://static.giantbomb.com/uploads/original/8/87790/2469741-inky.png');
   height: 30px;
   width: 30px;
-  position:absolute;
+  background-repeat: no-repeat;
+  background-size: 30px 30px;
 }
-
+ /* change to hash & content to background */
 .pinky{
-  content: url(https://static.giantbomb.com/uploads/scale_small/8/87790/2469744-pinky.png);
+  background-image: url('https://static.giantbomb.com/uploads/scale_small/8/87790/2469744-pinky.png');
   height: 30px;
   width: 30px;
-  position:absolute;
+  background-size: 30px 30px;
 }

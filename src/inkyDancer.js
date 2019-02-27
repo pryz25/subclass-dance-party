@@ -2,8 +2,12 @@ var makeInkyDancer = function(top, left, timeBetweenSteps) {
   // var blinkyDancer = makeDancer(top, left, timeBetweenSteps);
   makeDancer.call(this, top, left, timeBetweenSteps);
   this.$node = this.$node.addClass('inky');
+  // this.$node = this.$node.add( 'div' ).addClass('inky');
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
-  // so we must keep a copy of the old version of this 
+  // so we must keep a copy of the old version of this
+  // $('.inky').mouseout(function() {
+  //   $(this).css("background-image", "url('https://static.giantbomb.com/uploads/original/8/87790/2469741-inky.png')");
+  // });
 };
 
 makeInkyDancer.prototype = Object.create(makeDancer.prototype);
