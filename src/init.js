@@ -1,5 +1,20 @@
 $(document).ready(function() {
   window.dancers = [];
+  
+  var findDistance = function(dancer, partner) {
+    var distance = 0;
+
+    var x1 = dancer.offset().left;
+    var x2 = partner.offset().left;
+    var y1 = dancer.offset().top;
+    var y2 = partner.offset().top;
+
+    var yDist = y1 - y2;
+    var xDist = x1 - x2;
+
+    distance = Math.sqrt((xDist * xDist) + (yDist * yDist));
+    return distance;
+  };
 
   $('.addDancerButton').on('click', function(event) {
     /* This function sets up the click handlers for the create-dancer

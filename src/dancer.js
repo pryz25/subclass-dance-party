@@ -1,6 +1,6 @@
 // Creates and returns a new dancer object that can step
 var makeDancer = function(top, left, timeBetweenSteps) {
-  
+  this.neighbor = {};// closest object object {object: distance}
   // use jQuery to create an HTML <span> tag
   this.$node = $('<span class="dancer"></span>');
   this.top = top;
@@ -20,6 +20,7 @@ var makeDancer = function(top, left, timeBetweenSteps) {
   $('.dancer').mouseout(function() {
     $(this).css("background-image", '');
   });
+
 };
 
 makeDancer.prototype.step = function() {
@@ -45,3 +46,10 @@ makeDancer.prototype.lineUp = function() {
   //move left position to 0
   this.left = 0;
 };
+
+// interact method
+// each dancer calculates distances to each other
+  // create storage object
+  // for each dancer in dancer storage
+    // calculate distance
+// do something based on distance
